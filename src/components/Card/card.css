@@ -1,0 +1,188 @@
+.card__wrapper {
+    position: relative;
+    margin: 0 40px 16px;
+    --mainColor: #1698D9;
+}
+
+@media (max-width: 1199px) {
+    .card__wrapper {
+        margin: 0 40px 56px;
+    }
+}
+
+.card {
+    width: 325px;
+    height: 480px;
+    background: linear-gradient(135deg,transparent 5%,#fff 0);
+    border-radius: 0 15px 15px 15px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    --mainColor: #1698D9;
+}
+
+.card:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    transform: translate(-5px, -5px);
+    background-image: linear-gradient(135deg,transparent 5%,var(--mainColor) 0);
+    border-radius: 0 15px 15px 15px;
+}
+
+.card:hover {
+    --mainColor: #2EA8E6;
+}
+
+.card:hover .card__header--title.selected{
+    color: var(--mainColor);
+}
+
+
+.card.cardDisabled{
+    --mainColor: #B3B3B3;
+    cursor: auto;
+}
+
+.card.cardDisabled:hover {
+    --mainColor: #B3B3B3;
+}
+
+.card.cardSelected {
+    --mainColor: #D91667;
+}
+
+.card.cardSelected .card__header {
+    color: #666666;
+}
+
+.card.cardDisabled:hover {
+    --mainColor: #B3B3B3;
+}
+
+.card.cardSelected:hover {
+    --mainColor: #E52E7A;
+}
+
+.card__wrapper.no-hover .card.cardSelected:hover {
+    --mainColor: #D91667;
+}
+
+.card__header {
+    height: 100px;
+    padding:0 0 0 48px;
+    position: relative;
+    color: #666666;
+}
+
+.card__header--title {
+    font-size: 16px;
+    margin-top: 21px;
+    margin-bottom: 5px;
+}
+
+.card__info p.card__info--name{
+    font-weight: bold;
+    font-size: 48px;
+    color: #000;
+}
+
+.card__info p.card__info--with {
+    font-weight: bold;
+    font-size: 24px;
+    color: #000;
+    margin-bottom: 14px;
+}
+
+.card__info .card__info--p {
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.card__footer {
+    overflow: hidden;
+    height: 280px;
+    width: 100%;
+    position: relative;
+    margin-top: auto;
+    border-radius: 0 0 0 10px;
+}
+
+.card__size {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--mainColor);
+    font-size: 42px;
+    line-height: 38px;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+}
+
+.card__size:hover {
+    background: var(--mainColor);
+}
+
+.card__size span {
+    font-size: 21px;
+    line-height: 22px;
+}
+
+.card__image {
+    width: 384px;
+    height: auto;
+    position: absolute;
+    bottom: -100px;
+    left: -30px;
+}
+
+.card.cardDisabled .card__image {
+    opacity: 0.5;
+}
+
+.card__underText {
+    text-align: center;
+    color: #fff;
+    font-size: 13px;
+    line-height: 16px;
+    margin-top: 14px;
+
+}
+
+.card__underText p {
+    display: inline-block;
+    color: var(--mainColor);
+    cursor: pointer;
+}
+
+.card__underText p > span {
+    text-decoration: none;
+    border-bottom: 1px dashed var(--mainColor);
+}
+
+.card__underText span:hover {
+    color: var(--mainColor);
+}
+
+.card.cardDisabled .card__header,
+.card.cardDisabled .card__info p.card__info--name,
+.card.cardDisabled .card__info p.card__info--with {
+    color: #B3B3B3;
+}
+
+.underText__nope {
+    color: yellow;
+}
